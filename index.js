@@ -81,7 +81,7 @@ app.get('/scanner', (req, res) => {
 
 app.post('/scanner',async (req, res) => {
     const { qrData } = req.body;
-    const data = await pool.query('SELECT hash_data, name, email FROM test_list WHERE hash_data = $1', [qrData]);
+    const data = await pool.query('SELECT hash_data, name, email FROM students WHERE hash_data = $1', [qrData]);
     if(data.rows[0] != undefined) {
         if(qrData === data.rows[0].hash_data) {
             res.status(200).json({ message: [data.rows[0].name, data.rows[0].email] });
