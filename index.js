@@ -57,7 +57,7 @@ pool.connect()
 });
 
 app.get('/', (req, res) => {
-    res.send('<h1>To open scanner <a href="https://esperanza.gitam.edu/scanner">Click</a></h1>');
+    res.send('<h1>To open scanner <a href="https://esperanza.opaq.tech/scanner">Click</a></h1>');
 });
 
 app.post('/api/login', async (req, res) => {
